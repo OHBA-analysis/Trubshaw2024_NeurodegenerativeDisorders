@@ -16,7 +16,7 @@ subjects = participants["Subject"].values
 # create subjects filelist
 parc_paths = []
 for subject in subjects:
-    parc_paths.append(f"/home/mtrubshaw/Documents/ALS_dyn/data/src/{subject}/sflip_parc-raw.fif")
+    parc_paths.append(f"/home/mtrubshaw/Documents/ALS_dyn/data/src/{subject}/parc/parc-raw.fif")
 
 for path, subject in zip(parc_paths,subjects):
     raw = mne.io.read_raw_fif(path, verbose=False)

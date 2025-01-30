@@ -11,7 +11,7 @@ import mne
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from osl import preprocessing
+from osl_ephys import preprocessing
 
 
 # Directories

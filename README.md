@@ -4,5 +4,5 @@ Pipeline for static (time-averaged) analysis of source reconstructed MEG data co
 
 ## Prerequisites
 
-- https://github.com/OHBA-analysis/osl
-- https://github.com/OHBA-analysis/osl-dynamics/tree/main
+- https://github.com/OHBA-analysis/osl-ephys
+- https://github.com/OHBA-analysis/osl-dynamics

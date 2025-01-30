@@ -9,7 +9,7 @@ import os
 import pandas as pd
 from dask.distributed import Client
 
-from osl import source_recon, utils
+from osl_ephys import source_recon, utils
 
 
 # Directories
@@ -18,7 +18,7 @@ coreg_dir = "/home/mtrubshaw/Documents/ALS_dyn/data/coreg"
 src_dir = "/home/mtrubshaw/Documents/ALS_dyn/data/src"
 
 # Files
-preproc_file = preproc_dir + "/{subject}_rest_tsss/{subject}_rest_tsss_preproc_raw.fif"  # {subject} will be replaced by the subject name
+preproc_file = preproc_dir + "/{subject}/{subject}_preproc-raw.fif"  # {subject} will be replaced by the subject name
 
 # Settings
 config = """
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     # Source reconstruction
     source_recon.run_src_batch(
         config,
-        src_dir=src_dir,
+        outdir=src_dir,
         subjects=subjects,
         preproc_files=preproc_files,
         dask_client=True,

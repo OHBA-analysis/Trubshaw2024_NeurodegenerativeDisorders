@@ -5,7 +5,7 @@
 import pandas as pd
 from dask.distributed import Client
 
-from osl import preprocessing, utils
+from osl_ephys import preprocessing, utils
 
 
 if __name__ == "__main__":
@@ -45,7 +45,7 @@ if __name__ == "__main__":
         config,
         maxfiltered_files,
         outdir=preproc_dir,
-        outnames=subjects,
+        subjects=subjects,
         overwrite=True,
         dask_client=True,
     )

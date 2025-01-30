@@ -6,7 +6,7 @@ import pandas as pd
 from glob import glob
 from dask.distributed import Client
 
-from osl import source_recon, utils
+from osl_ephys import source_recon, utils
 
 
 # if using standard brain (missing structural) remember to add allow_smri_scaling: True to config under coregister
@@ -42,12 +42,12 @@ if __name__ == "__main__":
     preproc_files = []
     smri_files = []
     for subject, structural in zip(subjects, structurals):
-        preproc_files.append(f"{preproc_dir}/{subject}/{subject}_preproc_raw.fif")
+        preproc_files.append(f"{preproc_dir}/{subject}/{subject}_preproc-raw.fif")
         smri_files.append(f"{smri_dir}/{structural}")
 
     source_recon.run_src_batch(
         config,
-        src_dir=coreg_dir,
+        outdir=coreg_dir,
         subjects=subjects,
         preproc_files=preproc_files,
         smri_files=smri_files,
